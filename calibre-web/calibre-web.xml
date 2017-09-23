@@ -1,0 +1,65 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/calibre-web/calibre-web.xml</TemplateURL>
+<Beta>False</Beta>
+<Category>MediaServer:Other Tools:</Category>
+<Date>201-09-22</Date>
+  <Name>calibre-web</Name>
+  <Support></Support>
+  <Overview>Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.</Overview>
+  <Changes></Changes>
+  <Description>Calibre Web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.&#13;
+  &#13;
+  . [br]&#13;
+  &#13;
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&#13;
+  [b]8083[/b] WebUI for calibre-web [br]&#13;
+  [b]/config[/b] Storage for calibre-web configuration files[br]&#13;
+  [b]/books[/b] Map to your calibre database directory containing metabase.db (required for IP logging)[br]&#13;
+  </Description>
+  <Project>https://github.com/Technosoft2000/docker-calibre-web</Project>
+  <Registry>https://hub.docker.com/r/technosoft2000/calibre-web/</Registry>
+  <Repository>technosoft2000/calibre-web</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8083</HostPort>
+        <ContainerPort>8083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/calibredb</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8083]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/calibre-web/plexpy-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+<DonateText></DonateText>
+<DonateLink></DonateLink>
+<DonateImg></DonateImg>
+<BaseImage>lsiobase/alpine.python:3.6</BaseImage>
+</Container>
