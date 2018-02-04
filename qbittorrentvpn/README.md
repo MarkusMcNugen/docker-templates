@@ -1,5 +1,5 @@
 [githubownerurl]: https://github.com/MarkusMcNugen
-[preview]: https://raw.githubusercontent.com/janeczku/docker-calibre-web/master/screenshot.png "Calibre-web preview"
+[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/qbittorrentvpn/Screenshot.png "qBittorrent Preview"
 
 # unRAID qBittorrentvpn Web Template
 
