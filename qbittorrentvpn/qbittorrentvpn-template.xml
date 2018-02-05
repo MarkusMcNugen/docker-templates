@@ -7,8 +7,7 @@
   <MyIP></MyIP>
   <Privileged>true</Privileged>
   <Support/>
-  <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN. &#xD;
-Includes iptables to prevent IP leakage when tunnel does down.&#xD;
+  <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN with iptables killswitch to prevent IP leakage when tunnel does down.&#xD;
 &#xD;
 ### Environmental Variables&#xD;
 | Variable				| Required 	| Function 							| &#xD;
@@ -55,8 +54,7 @@ password</Overview>
   <ExtraParams/>
   <PostArgs/>
   <DateInstalled>1517797133</DateInstalled>
-  <Description>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN. &#xD;
-Includes iptables to prevent IP leakage when tunnel does down.&#xD;
+  <Description>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN with iptables killswitch to prevent IP leakage when tunnel does down.&#xD;
 &#xD;
 ### Environmental Variables&#xD;
 | Variable				| Required 	| Function 							| &#xD;
