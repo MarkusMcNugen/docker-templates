@@ -155,9 +155,9 @@ password</Description>
       <Mode/>
     </Variable>
   </Environment>
-  <Config Name="Host Port 1" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="Host Port 2" Target="8999" Default="" Mode="tcp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
-  <Config Name="Host Port 3" Target="8999" Default="" Mode="udp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
+  <Config Name="Host Port 1" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Host Port 2" Target="8999" Default="8999" Mode="tcp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
+  <Config Name="Host Port 3" Target="8999" Default="8999" Mode="udp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
   <Config Name="config" Target="/config" Default="/mnt/cache/appdata/qbittorrentvpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="downloads" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="VPN_ENABLED" Target="VPN_ENABLED" Default="yes" Mode="" Description="Container Variable: VPN_ENABLED" Type="Variable" Display="always" Required="false" Mask="false"></Config>
