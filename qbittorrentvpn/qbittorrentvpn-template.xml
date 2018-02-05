@@ -18,7 +18,23 @@
   <Description>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN.</Description>
   <Networking>
     <Mode>br0</Mode>
-    <Publish/>
+     <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8999</HostPort>
+        <ContainerPort>8999</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8999</HostPort>
+        <ContainerPort>8999</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
@@ -59,6 +75,9 @@
       <Mode/>
     </Variable>
   </Environment>
+  <Config Name="Host Port 1" Target="8080" Default="" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Host Port 2" Target="8999" Default="" Mode="tcp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
+  <Config Name="Host Port 3" Target="8999" Default="" Mode="udp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
   <Config Name="config" Target="/config" Default="/mnt/cache/appdata/qbittorrentvpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="downloads" Target="/downloads" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="VPN_ENABLED" Target="VPN_ENABLED" Default="yes" Mode="" Description="Container Variable: VPN_ENABLED" Type="Variable" Display="always" Required="false" Mask="false"></Config>
