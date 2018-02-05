@@ -7,7 +7,44 @@
   <MyIP></MyIP>
   <Privileged>true</Privileged>
   <Support/>
-  <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN.</Overview>
+  <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN.&#xD;
+&#xD;
+### Environmental Variables&#xD;
+| Variable                              | Required      | Function                                                      | &#xD;
+|`VPN_ENABLED`          | Yes           | Enable VPN? (yes|no) Default:yes              |&#xD;
+|`LAN_NETWORK`          | Yes           | Local Network with CIDR notation              |&#xD;
+|`NAME_SERVERS` | No                    | Comma delimited name servers                  |&#xD;
+|`PUID`                         | No                    | UID applied to config files and downloads     |&#xD;
+|`PGID`                         | No                    | GID applied to config files and downloads     |&#xD;
+&#xD;
+### Volumes&#xD;
+| Variable              | Required      | Function                                              | &#xD;
+| `config`              | Yes           | qBittorrent and OpenVPN config files  |&#xD;
+| `downloads`   | No                    | Default download path for torrents    |&#xD;
+&#xD;
+### Ports&#xD;
+| Port  | Required      | Function                                              | &#xD;
+| `8080`        | Yes           | qBittorrent WebUI                                     | &#xD;
+| `8999`        | Yes           | Listening port for qBittorrent (TCP)  |&#xD;
+| `8999`        | Yes           | Listening port for qBittorrent (UDP)  |&#xD;
+&#xD;
+## Web UI:&#xD;
+Access the Web UI by browsing to https://IPADDRESS:8080 in a browser on the same network.&#xD;
+&#xD;
+## Default Credentials&#xD;
+| Credential            | Default Value         |&#xD;
+|`WebUI Username`| admin                        |&#xD;
+|`WebUI Password` | adminadmin          |&#xD;
+&#xD;
+## How to use OpenVPN&#xD;
+The container will fail to boot if `VPN_ENABLED` is set to yes or empty and a .ovpn is not present in the /config/openvpn directory. Drop a .ovpn file from your VPN provider into /config/openvpn and start the container again. You may need to edit the ovpn configuration file to load your VPN credentials from a file by setting `auth-user-pass`.&#xD;
+&#xD;
+### Example auth-user-pass option&#xD;
+`auth-user-pass credentials.conf`&#xD;
+&#xD;
+### Example credentials.conf&#xD;
+username&#xD;
+password</Overview>
   <Category>Downloaders:</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/qbittorrentvpn/qbittorrentvpn-template.xml</TemplateURL>
@@ -15,7 +52,44 @@
   <ExtraParams/>
   <PostArgs/>
   <DateInstalled>1517797133</DateInstalled>
-  <Description>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN.</Description>
+  <Description>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN.&#xD;
+&#xD;
+### Environmental Variables&#xD;
+| Variable                              | Required      | Function                                                      | &#xD;
+|`VPN_ENABLED`          | Yes           | Enable VPN? (yes|no) Default:yes              |&#xD;
+|`LAN_NETWORK`          | Yes           | Local Network with CIDR notation              |&#xD;
+|`NAME_SERVERS` | No                    | Comma delimited name servers                  |&#xD;
+|`PUID`                         | No                    | UID applied to config files and downloads     |&#xD;
+|`PGID`                         | No                    | GID applied to config files and downloads     |&#xD;
+&#xD;
+### Volumes&#xD;
+| Variable              | Required      | Function                                              | &#xD;
+| `config`              | Yes           | qBittorrent and OpenVPN config files  |&#xD;
+| `downloads`   | No                    | Default download path for torrents    |&#xD;
+&#xD;
+### Ports&#xD;
+| Port  | Required      | Function                                              | &#xD;
+| `8080`        | Yes           | qBittorrent WebUI                                     | &#xD;
+| `8999`        | Yes           | Listening port for qBittorrent (TCP)  |&#xD;
+| `8999`        | Yes           | Listening port for qBittorrent (UDP)  |&#xD;
+&#xD;
+## Web UI:&#xD;
+Access the Web UI by browsing to https://IPADDRESS:8080 in a browser on the same network.&#xD;
+&#xD;
+## Default Credentials&#xD;
+| Credential            | Default Value         |&#xD;
+|`WebUI Username`| admin                        |&#xD;
+|`WebUI Password` | adminadmin          |&#xD;
+&#xD;
+## How to use OpenVPN&#xD;
+The container will fail to boot if `VPN_ENABLED` is set to yes or empty and a .ovpn is not present in the /config/openvpn directory. Drop a .ovpn file from your VPN provider into /config/openvpn and start the container again. You may need to edit the ovpn configuration file to load your VPN credentials from a file by setting `auth-user-pass`.&#xD;
+&#xD;
+### Example auth-user-pass option&#xD;
+`auth-user-pass credentials.conf`&#xD;
+&#xD;
+### Example credentials.conf&#xD;
+username&#xD;
+password</Description>
   <Networking>
     <Mode>br0</Mode>
      <Publish>
