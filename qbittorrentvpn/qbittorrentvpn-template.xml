@@ -39,7 +39,7 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>192.168.2.0/24</Value>
+      <Value>192.168.1.0/24</Value>
       <Name>LAN_NETWORK</Name>
       <Mode/>
     </Variable>
