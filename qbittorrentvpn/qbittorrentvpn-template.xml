@@ -27,7 +27,7 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/Downloads/</HostDir>
+      <HostDir></HostDir>
       <ContainerDir>/downloads</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
