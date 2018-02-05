@@ -7,7 +7,7 @@
   <MyIP></MyIP>
   <Privileged>true</Privileged>
   <Support/>
-    <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN. &#xD;
+  <Overview>Docker container which runs a headless qBittorrent client with WebUI while connecting to OpenVPN. &#xD;
 Includes iptables to prevent IP leakage when tunnel does down.&#xD;
 &#xD;
 ### Environmental Variables&#xD;
@@ -30,7 +30,9 @@ Includes iptables to prevent IP leakage when tunnel does down.&#xD;
 | `8999` 	| Yes 		| Listening port for qBittorrent (UDP)	|&#xD;
 &#xD;
 ## Web UI:&#xD;
-Access the Web UI by browsing to https://IPADDRESS:8080 in a browser on the same network.&#xD;
+Access the Web UI by browsing to http://IPADDRESS:8080 in a browser on the same network.&#xD;
+&#xD;
+Note: qBittorrent throws a "Referer header &amp;amp; Target origin mismatch!" when trying to open with the WebUI menu link. Instead browse to the containers IP and Port with a web browser on the same network and it will work. Or copy the address bar in the new tab when opening with the WebUI menu link, paste it in a new tab/windows address bar and press enter.&#xD;
 &#xD;
 ## Default Credentials&#xD;
 | Credential 		| Default Value		|&#xD;
@@ -76,7 +78,9 @@ Includes iptables to prevent IP leakage when tunnel does down.&#xD;
 | `8999` 	| Yes 		| Listening port for qBittorrent (UDP)	|&#xD;
 &#xD;
 ## Web UI:&#xD;
-Access the Web UI by browsing to https://IPADDRESS:8080 in a browser on the same network.&#xD;
+Access the Web UI by browsing to http://IPADDRESS:8080 in a browser on the same network.&#xD;
+&#xD;
+Note: qBittorrent throws a "Referer header &amp;amp; Target origin mismatch!" when trying to open with the WebUI menu link. Instead browse to the containers IP and Port with a web browser on the same network and it will work. Or copy the address bar in the new tab when opening with the WebUI menu link, paste it in a new tab/windows address bar and press enter.&#xD;
 &#xD;
 ## Default Credentials&#xD;
 | Credential 		| Default Value		|&#xD;
