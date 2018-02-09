@@ -10,7 +10,7 @@
   <Overview>Headless OpenConnect SSL VPN server. Features all or split-include routing abilities as well as split-dns. OpenConnect is compatible with the OpenConnect client as well as experimentally with AnyConnect clients used by Cisco.</Overview>
   <Category>Network:Other</Category>
   <WebUI/>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/openconnect/openconnect-template</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/openconnect/ocserv-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
