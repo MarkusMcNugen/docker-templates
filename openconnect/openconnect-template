@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>openconnect</Name>
+  <Repository>markusmcnugen/openconnect</Repository>
+  <Registry>https://hub.docker.com/r/markusmcnugen/ocserv/</Registry>
+  <Network>br0</Network>
+  <MyIP>192.168.2.188</MyIP>
+  <Privileged>true</Privileged>
+  <Support>https://lime-technology.com/forums/topic/69152-support-markusmcnugens-docker-repository/</Support>
+  <Overview>Headless OpenConnect SSL VPN server. Features all or split-include routing abilities as well as split-dns. OpenConnect is compatible with the OpenConnect client as well as experimentally with AnyConnect clients used by Cisco.</Overview>
+  <Category>Network:Other</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/openconnect/ocserv-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1518147992</DateInstalled>
+  <Description>Headless OpenConnect SSL VPN server. Features all or split-include routing abilities as well as split-dns. OpenConnect is compatible with the OpenConnect client as well as experimentally with AnyConnect clients used by Cisco.</Description>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>4443</HostPort>
+        <ContainerPort/>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>4443</HostPort>
+        <ContainerPort/>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/openconnect</HostDir>
+      <ContainerDir>/etc/ocserv</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>4443</Value>
+      <Name>LISTEN_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8.8.8.8,37.235.1.174,8.8.4.4,37.235.1.177</Value>
+      <Name>DNS_SERVERS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>all</Value>
+      <Name>TUNNEL_MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>TUNNEL_ROUTES</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value/>
+      <Name>SPLIT_DNS_DOMAINS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>no</Value>
+      <Name>PROXY_SUPPORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="4443/tcp" Target="" Default="4443" Mode="tcp" Description="Container Port: 4443/tcp" Type="Port" Display="always" Required="false" Mask="false">4443</Config>
+  <Config Name="4443/udp" Target="" Default="4443" Mode="udp" Description="Container Port: 4443/udp" Type="Port" Display="always" Required="true" Mask="false">4443</Config>
+  <Config Name="LISTEN_PORT" Target="LISTEN_PORT" Default="4443" Mode="" Description="Container Variable: LISTEN_PORT" Type="Variable" Display="always" Required="false" Mask="false">4443</Config>
+  <Config Name="DNS_SERVERS" Target="DNS_SERVERS" Default="8.8.8.8,37.235.1.174,8.8.4.4,37.235.1.177" Mode="" Description="Container Variable: DNS_SERVERS" Type="Variable" Display="always" Required="false" Mask="false">8.8.8.8,37.235.1.174,8.8.4.4,37.235.1.177</Config>
+  <Config Name="config" Target="/etc/ocserv" Default="" Mode="rw" Description="Container Path: /etc/ocserv" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/openconnect</Config>
+  <Config Name="TUNNEL_MODE" Target="TUNNEL_MODE" Default="all" Mode="" Description="Container Variable: TUNNEL_MODE" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
+  <Config Name="TUNNEL_ROUTES" Target="TUNNEL_ROUTES" Default="" Mode="" Description="Container Variable: TUNNEL_ROUTES" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="SPLIT_DNS_DOMAINS" Target="SPLIT_DNS_DOMAINS" Default="" Mode="" Description="Container Variable: SPLIT_DNS_DOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="PROXY_SUPPORT" Target="PROXY_SUPPORT" Default="no" Mode="" Description="Container Variable: PROXY_SUPPORT" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
+</Container>
