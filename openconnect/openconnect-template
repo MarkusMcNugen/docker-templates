@@ -4,7 +4,7 @@
   <Repository>markusmcnugen/openconnect</Repository>
   <Registry>https://hub.docker.com/r/markusmcnugen/ocserv/</Registry>
   <Network>br0</Network>
-  <MyIP>192.168.2.180</MyIP>
+  <MyIP></MyIP>
   <Privileged>true</Privileged>
   <Support>https://lime-technology.com/forums/topic/69152-support-markusmcnugens-docker-repository/</Support>
   <Overview>OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it.</Overview>
