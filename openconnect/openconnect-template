@@ -99,11 +99,6 @@
       <Name>SPLIT_DNS_DOMAINS</Name>
       <Mode/>
     </Variable>
-    <Variable>
-      <Value>no</Value>
-      <Name>PROXY_SUPPORT</Name>
-      <Mode/>
-    </Variable>
   </Environment>
   <Config Name="4443/tcp" Target="" Default="4443" Mode="tcp" Description="Container Port: 4443/tcp" Type="Port" Display="always" Required="true" Mask="false">4443</Config>
   <Config Name="4443/udp" Target="" Default="4443" Mode="udp" Description="Container Port: 4443/udp" Type="Port" Display="always" Required="true" Mask="false">4443</Config>
@@ -119,6 +114,5 @@
   <Config Name="TUNNEL_MODE" Target="TUNNEL_MODE" Default="all" Mode="" Description="Container Variable: TUNNEL_MODE" Type="Variable" Display="advanced" Required="false" Mask="false">all</Config>
   <Config Name="TUNNEL_ROUTES" Target="TUNNEL_ROUTES" Default="" Mode="" Description="Container Variable: TUNNEL_ROUTES" Type="Variable" Display="advanced" Required="false" Mask="false"/>
   <Config Name="SPLIT_DNS_DOMAINS" Target="SPLIT_DNS_DOMAINS" Default="" Mode="" Description="Container Variable: SPLIT_DNS_DOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"/>
-  <Config Name="PROXY_SUPPORT" Target="PROXY_SUPPORT" Default="no" Mode="" Description="Container Variable: PROXY_SUPPORT" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
   <Config Name="POWER_USER" Target="POWER_USER" Default="no" Mode="" Description="Container Variable: POWER_USER" Type="Variable" Display="advanced" Required="false" Mask="false">no</Config>
 </Container>
