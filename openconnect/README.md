@@ -2,7 +2,7 @@
 
 # unRAID qBittorrentvpn Web Template
 
-## Headless OpenConnect SSL VPN server. Features all or split-include routing abilities as well as split-dns. OpenConnect is compatible with the OpenConnect client as well as experimentally with AnyConnect clients used by Cisco.
+## OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it.
 
 # URLs
 Docker Maintainer:  
