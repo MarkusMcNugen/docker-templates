@@ -80,11 +80,6 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>no</Value>
-      <Name>POWER_USER</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>all</Value>
       <Name>TUNNEL_MODE</Name>
       <Mode/>
@@ -97,6 +92,11 @@
     <Variable>
       <Value/>
       <Name>SPLIT_DNS_DOMAINS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>no</Value>
+      <Name>POWER_USER</Name>
       <Mode/>
     </Variable>
   </Environment>
