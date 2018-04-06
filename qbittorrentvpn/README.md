@@ -1,11 +1,11 @@
 [githubownerurl]: https://github.com/MarkusMcNugen
 [preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/qbittorrentvpn/Screenshot.png "qBittorrent Preview"
 
-# unRAID qBittorrentvpn Web Template
-
-## Headless qBittorrent docker with WebUI and OpenVPN support
+# unRAID qBittorrentvpn Template
 
 ![alt text][preview]
+
+## Headless qBittorrent docker with WebUI and OpenVPN support
 
 # URLs
 Docker Maintainer:  
