@@ -1,5 +1,5 @@
 [githubownerurl]: https://github.com/MarkusMcNugen
-[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/openconnect/ocserv-icon.png "Custom ocserv icon"
+[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/SFTP.png "Custom ocserv icon"
 
 # unRAID SFTP Server Template
 
