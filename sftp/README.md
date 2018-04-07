@@ -5,7 +5,8 @@
 
 ![alt text][preview]
 
-## OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it.
+## Easy to use SFTP ([SSH File Transfer Protocol](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol)) server with [OpenSSH](https://en.wikipedia.org/wiki/OpenSSH) and [Fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page) installed for extra hardening against brute force attacks. Forked from and serves as a drop in replacement for atmoz/sftp. 
+This is an automated build linked with [phusion/baseimage](https://hub.docker.com/r/phusion/baseimage/).
 
 # URLs
 Docker Maintainer:  
