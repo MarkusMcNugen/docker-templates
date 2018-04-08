@@ -9,7 +9,7 @@
 This is an automated build linked with [phusion/baseimage](https://hub.docker.com/r/phusion/baseimage/).
 
 # URLs
-Docker Maintainer:  
+Docker Maintainer:
 [MarkusMcNugen][githubownerurl]  
 
 Docker Hub:  
