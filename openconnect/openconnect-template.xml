@@ -7,7 +7,7 @@
   <MyIP></MyIP>
   <Privileged>true</Privileged>
   <Support>https://lime-technology.com/forums/topic/69152-support-markusmcnugens-docker-repository/</Support>
-  <Overview>OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it.</Overview>
+  <Overview>OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it. This container is an automated build linked to alpine. The dockerfile was written to always download and compile the latest release of OpenConnect VPN server when built.</Overview>
   <Category>Network:Other</Category>
   <WebUI/>
   <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/openconnect/openconnect-template</TemplateURL>
@@ -15,7 +15,7 @@
   <ExtraParams/>
   <PostArgs/>
   <DateInstalled>1518285860</DateInstalled>
-  <Description>OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it.</Description>
+  <Description>OpenConnect server is an SSL VPN server. Its purpose is to be a secure, small, fast and configurable VPN server. It implements the OpenConnect SSL VPN protocol, and has also (currently experimental) compatibility with clients using the AnyConnect SSL VPN protocol. The OpenConnect protocol provides a dual TCP/UDP VPN channel, and uses the standard IETF security protocols to secure it. This container is an automated build linked to alpine. The dockerfile was written to always download and compile the latest release of OpenConnect VPN server when built.</Description>
   <Networking>
     <Mode>br0</Mode>
     <Publish>
