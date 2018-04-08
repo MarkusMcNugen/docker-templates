@@ -11,7 +11,7 @@
   <Overview>Easy to use SFTP (SSH File Transfer Protocol) server with OpenSSH and Fail2ban installed for extra hardening against brute force attacks. Forked from atmoz/sftp. This is an automated build linked with phusion/baseimage.</Overview>
   <Category>Tools: Network:Other</Category>
   <WebUI/>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/sftp-template.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/SFTP.png</Icon>
   <ExtraParams/>
   <PostArgs/>
