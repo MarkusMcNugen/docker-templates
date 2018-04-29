@@ -107,6 +107,16 @@ NOTE2: If you want to change the ports, change the environmental variables as we
       <Name>INCOMING_PORT</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>8080</Value>
+      <Name>WEBUI_PORT_ENV</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8999</Value>
+      <Name>INCOMING_PORT_ENV</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Config Name="WEBUI_PORT" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8081</Config>
   <Config Name="INCOMING_PORT_TCP" Target="8999" Default="8999" Mode="tcp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
