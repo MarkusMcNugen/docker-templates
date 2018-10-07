@@ -98,6 +98,11 @@ NOTE2: If you want to change the ports, change the environmental variables as we
       <Mode/>
     </Variable>
     <Variable>
+      <Value>002</Value>
+      <Name>UMASK</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
       <Value>8080</Value>
       <Name>WEBUI_PORT</Name>
       <Mode/>
