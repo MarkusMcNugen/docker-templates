@@ -123,7 +123,7 @@ NOTE2: If you want to change the ports, change the environmental variables as we
       <Mode/>
     </Variable>
   </Environment>
-  <Config Name="WEBUI_PORT" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8081</Config>
+  <Config Name="WEBUI_PORT" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
   <Config Name="INCOMING_PORT_TCP" Target="8999" Default="8999" Mode="tcp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
   <Config Name="INCOMING_PORT_UDP" Target="8999" Default="8999" Mode="udp" Description="Container Port: 8999" Type="Port" Display="always" Required="true" Mask="false">8999</Config>
   <Config Name="WEBUI_PORT_ENV" Target="WEBUI_PORT" Default="8080" Mode="" Description="Container Variable: WEBUI_PORT - Sets Web UI port in qBittorrent config. You must change the exposed WebUI Port to the same value if you change this." Type="Variable" Display="always" Required="false" Mask="false">8080</Config>
