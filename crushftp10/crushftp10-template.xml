@@ -1,54 +1,111 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>sftp</Name>
-  <Repository>markusmcnugen/sftp:latest</Repository>
-  <Registry>https://hub.docker.com/r/markusmcnugen/sftp/</Registry>
-  <Network>br0</Network>
-  <MyIP>192.168.1.2</MyIP>
-  <Shell>bash</Shell>
-  <Privileged>true</Privileged>
-  <Support>https://lime-technology.com/forums/topic/69152-support-markusmcnugens-docker-repository/</Support>
-  <Project>https://github.com/MarkusMcNugen/docker-sftp</Project>
-  <Overview>Easy to use SFTP (SSH File Transfer Protocol) server with OpenSSH and Fail2ban installed for extra hardening against brute force attacks. Forked from atmoz/sftp. Based on phusion/baseimage.&#xD;
-&#xD;
-* Shared Path is an example. You must replace host path with path to a folder to share AND change user in the container path to the name of a user account configured in users.conf. See dockerhub or github page for more info.</Overview>
-  <Category>Tools: Network:Other</Category>
-  <WebUI/>
-  <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/sftp-template.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/SFTP.png</Icon>
+  <Name>CrushFTP10</Name>
+  <Repository>markusmcnugen/crushftp:latest</Repository>
+  <Registry>https://hub.docker.com/r/markusmcnugen/crushftp/</Registry>
+  <Network>bridge</Network>
+  <MyIP></MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/69152-support-markusmcnugens-docker-repository/</Support>
+  <Project>https://hub.docker.com/r/markusmcnugen/crushftp</Project>
+  <Overview>CrushFTP 10</Overview>
+  <Category>Backup: Cloud: Network:Web Network:FTP</Category>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp10-template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DateInstalled></DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>Easy to use SFTP (SSH File Transfer Protocol) server with OpenSSH and Fail2ban installed for extra hardening against brute force attacks. Forked from atmoz/sftp. Based on phusion/baseimage.&#xD;
-&#xD;
-* See dockerhub or github page for more info.</Description>
+  <Description>CrushFTP 10</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>22</HostPort>
-        <ContainerPort>22</ContainerPort>
+        <HostPort>21</HostPort>
+        <ContainerPort>21</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>443</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+	  <Port>
+        <HostPort>2000-2100</HostPort>
+        <ContainerPort>2000-2100</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>2222</HostPort>
+        <ContainerPort>2222</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>9090</HostPort>
+        <ContainerPort>9090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>2000-2100</HostPort>
+        <ContainerPort/>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/Shared/</HostDir>
-      <ContainerDir>/home/user/Shared/</ContainerDir>
-      <Mode>ro</Mode>
+      <HostDir>/mnt/user/</HostDir>
+      <ContainerDir>/mnt/FTP/Shared</ContainerDir>
+      <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/cache/appdata/sftp/</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <HostDir>/mnt/cache/appdata/crushftp</HostDir>
+      <ContainerDir>/var/opt/CrushFTP10</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Value>crushadmin</Value>
+      <Name>CRUSH_ADMIN_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>crushadmin</Value>
+      <Name>CRUSH_ADMIN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>http</Value>
+      <Name>CRUSH_ADMIN_PROTOCOL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8080</Value>
+      <Name>CRUSH_ADMIN_PORT</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
   <Labels/>
-  <Config Name="SSH Port" Target="22" Default="22" Mode="tcp" Description="Container Port: 22" Type="Port" Display="always" Required="false" Mask="false">22</Config>
-  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/sftp/</Config>
+  <Config Name="FTP Port" Target="21" Default="2121" Mode="tcp" Description="Container Port: 2121" Type="Port" Display="always" Required="true" Mask="false">21</Config>
+  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="FTP Passive Ports" Target="2000-2100" Default="2000-2100" Mode="tcp" Description="Container Port: 2000-2100" Type="Port" Display="always" Required="true" Mask="false">2000-2100</Config>
+  <Config Name="SFTP Port" Target="2222" Default="2222" Mode="tcp" Description="Container Port: 2222" Type="Port" Display="always" Required="true" Mask="false">2222</Config>
+  <Config Name="HTTP Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="HTTP Port" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
+  <Config Name="CrushFTP Admin User" Target="CRUSH_ADMIN_USER" Default="crushadmin" Mode="" Description="Default admin user for CrushFTP administration" Type="Variable" Display="always" Required="true" Mask="false">crushadmin</Config>
+  <Config Name="CrushFTP Admin Password" Target="CRUSH_ADMIN_PASSWORD" Default="crushadmin" Mode="" Description="Default admin password for CrushFTP administration" Type="Variable" Display="always" Required="true" Mask="false">crushadmin</Config>
+  <Config Name="Healthcheck Protocol" Target="CRUSH_ADMIN_PROTOCOL" Default="http" Mode="" Description="Protocol for health cecks" Type="Variable" Display="always" Required="true" Mask="false">http</Config>
+  <Config Name="Healthceck Port" Target="CRUSH_ADMIN_PORT" Default="8080" Mode="" Description="Port for health cecks" Type="Variable" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="FTP Folder 1" Target="/mnt/FTP/Shared" Default="" Mode="rw" Description="Container Path: /mnt/FTP/Shared" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/</Config>
+  <Config Name="Config Volume" Target="/var/opt/CrushFTP10" Default="/mnt/cache/appdata/crushftp" Mode="rw" Description="Container Path: /var/opt/CrushFTP10" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/crushftp</Config>
 </Container>
