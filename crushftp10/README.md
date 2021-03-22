@@ -5,7 +5,7 @@
 
 ![alt text][preview]
 
-## CrushFTP 10 server built on Ubuntu 20.04. Size 641.1MB.
+## CrushFTP 10 server built on Alpine 3.12. Size 234.8 MB.
 
 # URLs
 Docker Maintainer:
