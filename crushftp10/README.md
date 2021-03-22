@@ -1,5 +1,5 @@
 [githubownerurl]: https://github.com/MarkusMcNugen
-[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png "Custom ocserv icon"
+[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png "CrushFTP Logo"
 
 # unRAID CrushFTP 10 Server Template
 
