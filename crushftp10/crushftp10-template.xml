@@ -8,8 +8,8 @@
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/69152-support-markusmcnugens-docker-repository/</Support>
-  <Project>https://hub.docker.com/r/markusmcnugen/crushftp</Project>
-  <Overview>CrushFTP 10</Overview>
+  <Project>https://www.crushftp.com/index.html</Project>
+  <Overview>CrushFTP 10 running on an Alpine 3.12 base. See dockerhub registry page for more details.</Overview>
   <Category>Backup: Cloud: Network:Web Network:FTP</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp10-template.xml</TemplateURL>
@@ -20,7 +20,7 @@
   <DateInstalled></DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>CrushFTP 10</Description>
+  <Description>CrushFTP 10 running on an Alpine 3.12 base. See dockerhub registry page for more details.</Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
