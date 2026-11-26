@@ -1,49 +1,32 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Container version="2">
   <Name>sftp</Name>
-  <Repository>markusmcnugen/sftp:latest</Repository>
+  <Repository>markusmcnugen/sftp:2</Repository>
   <Registry>https://hub.docker.com/r/markusmcnugen/sftp/</Registry>
   <Network>bridge</Network>
-  <MyIP></MyIP>
+  <MyIP/>
   <Shell>bash</Shell>
-  <Privileged>true</Privileged>
-  <Support>https://lime-technology.com/forums/topic/69152-support-markusmcnugens-docker-repository/</Support>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/69152-support-markusmcnugens-docker-repository/</Support>
   <Project>https://github.com/MarkusMcNugen/docker-sftp</Project>
-  <Overview>Easy to use SFTP (SSH File Transfer Protocol) server with OpenSSH and Fail2ban installed for extra hardening against brute force attacks. Forked from atmoz/sftp. Based on phusion/baseimage.&#xD;
-&#xD;
-* Shared Path is an example. You must replace host path with path to a folder to share AND change user in the container path to the name of a user account configured in users.conf. See dockerhub or github page for more info.</Overview>
-  <Category>Tools: Network:Other</Category>
-  <WebUI/>
+  <ReadMe>https://markusmcnugen.github.io/docker-sftp/</ReadMe>
+  <Overview>A hardened OpenSSH SFTP server with chroot jails and fail2ban, in one container. Each account is jailed in its home directory, fail2ban bans password guessers, and the /config folder holds everything, applied again on every start.[br][br]The admin web UI is on, over HTTPS on port 8443. On first start the container's log prints a setup link for the first admin that works once, for one hour: open it with this server's address and the web UI port, then choose a name and a password. The web UI adds and changes accounts, keys, permissions, groups, settings, bans and country rules, and changes apply at once. Change the server's settings there rather than adding variables here: a variable set here wins over the Settings page, even when it is empty.[br][br]Give an account a folder with another path: a share on the host, mounted in the container at /home/NAME/FOLDER, where NAME is the account's name. The file browser for account holders stays off until File browser is true.</Overview>
+  <Category>Network:FTP Security:</Category>
+  <WebUI>https://[IP]:[PORT:8443]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/sftp-template.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/sftp/SFTP.png</Icon>
-  <ExtraParams/>
+  <ExtraParams>--cap-add=NET_ADMIN --cap-add=NET_RAW</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled></DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Description>Easy to use SFTP (SSH File Transfer Protocol) server with OpenSSH and Fail2ban installed for extra hardening against brute force attacks. Forked from atmoz/sftp. Based on phusion/baseimage.&#xD;
-&#xD;
-* See dockerhub or github page for more info.</Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>22</HostPort>
-        <ContainerPort>22</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/cache/appdata/sftp/</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <Environment/>
-  <Labels/>
-  <Config Name="SSH Port" Target="22" Default="22" Mode="tcp" Description="Container Port: 22" Type="Port" Display="always" Required="false" Mask="false">22</Config>
-  <Config Name="appdata" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/cache/appdata/sftp/</Config>
+  <Requires/>
+  <Config Name="SFTP port" Target="22" Default="2222" Mode="tcp" Description="The port SFTP clients connect to. Unraid's own SSH server already listens on 22." Type="Port" Display="always" Required="true" Mask="false">2222</Config>
+  <Config Name="Admin web UI port" Target="8443" Default="8443" Mode="tcp" Description="The admin web UI, over HTTPS." Type="Port" Display="always" Required="false" Mask="false">8443</Config>
+  <Config Name="File browser port" Target="8444" Default="8444" Mode="tcp" Description="The file browser, over HTTPS, when File browser is true." Type="Port" Display="always" Required="false" Mask="false">8444</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/sftp" Mode="rw" Description="Accounts, keys, settings, logs and the web UI's data." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/sftp</Config>
+  <Config Name="Admin web UI" Target="WEBUI_ENABLED" Default="true" Mode="" Description="true runs the admin web UI." Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="File browser" Target="WEBUI_FILES_ENABLED" Default="false" Mode="" Description="true runs the file browser for accounts given the web option. It needs the admin web UI." Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Trusted networks" Target="WEBUI_TRUSTED_NETWORKS" Default="" Mode="" Description="Networks, such as 192.168.1.0/24, from which admins and file browser users sign in without a two-factor code, and which the country rules always let in." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Trusted proxies" Target="WEBUI_TRUSTED_PROXIES" Default="" Mode="" Description="Reverse proxies allowed to connect in plain HTTP and to send X-Forwarded-For." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Plain HTTP" Target="WEBUI_PLAIN_HTTP" Default="false" Mode="" Description="true serves plain HTTP, for a reverse proxy. It needs Trusted proxies." Type="Variable" Display="advanced" Required="false" Mask="false">false</Config>
+  <Config Name="fail2ban" Target="FAIL2BAN_ENABLED" Default="true" Mode="" Description="false runs without fail2ban." Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
 </Container>
