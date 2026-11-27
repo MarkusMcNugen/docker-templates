@@ -1,111 +1,39 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Container version="2">
-  <Name>CrushFTP10</Name>
-  <Repository>markusmcnugen/crushftp:latest</Repository>
+  <Name>CrushFTP</Name>
+  <Repository>markusmcnugen/crushftp:2</Repository>
   <Registry>https://hub.docker.com/r/markusmcnugen/crushftp/</Registry>
   <Network>bridge</Network>
-  <MyIP></MyIP>
+  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/69152-support-markusmcnugens-docker-repository/</Support>
-  <Project>https://www.crushftp.com/index.html</Project>
-  <Overview>Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or HTTPS using CrushFTP 10. Built on Alpine 3.12. Size 234.8 MB. See dockerhub registry page for more details.</Overview>
-  <Category>Backup: Cloud: Network:Web Network:FTP</Category>
+  <Project>https://github.com/MarkusMcNugen/docker-CrushFTP</Project>
+  <ReadMe>https://github.com/MarkusMcNugen/docker-CrushFTP#readme</ReadMe>
+  <Overview>CrushFTP 10 and 11 or CrushMFT 27, for FTP, FTPS, SFTP, HTTPS and WebDAV, in one container. On first start it downloads the version you choose into the Config folder, CrushMFT 27 unless CrushFTP version says 10 or 11, checks the download, and runs it as nobody:users. Each later start moves it to the vendor's newest build of that version; a newer major version only comes with CrushFTP upgrade. [br][br]The first administrator, crushadmin, gets a random password in admin-password.txt in the Config folder: open the web UI, sign in, change it, and delete the file. Each version needs its own license from the vendor; CrushMFT 27 has a free one. [br][br]Coming from the old CrushFTP 10 image: it kept resetting the administrator's password to a value anyone could know. The first start gives that administrator a new random password in admin-password.txt, once, and keeps your CrushFTP 10.</Overview>
+  <Category>Network:FTP Network:Web Backup: Cloud:</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp10-template.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png</Icon>
-  <ExtraParams/>
+  <ExtraParams>--stop-timeout=120</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled></DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Description>Share your files securely with FTP, Implicit FTPS, SFTP, HTTP, or HTTPS using CrushFTP 10. Built on Alpine 3.12. Size 234.8 MB. See dockerhub registry page for more details.</Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>21</HostPort>
-        <ContainerPort>21</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>443</HostPort>
-        <ContainerPort>443</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-	  <Port>
-        <HostPort>2000-2100</HostPort>
-        <ContainerPort>2000-2100</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>2222</HostPort>
-        <ContainerPort>2222</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>8080</HostPort>
-        <ContainerPort>8080</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>9090</HostPort>
-        <ContainerPort>9090</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort>2000-2100</HostPort>
-        <ContainerPort/>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/</HostDir>
-      <ContainerDir>/mnt/FTP/Shared</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/cache/appdata/crushftp</HostDir>
-      <ContainerDir>/var/opt/CrushFTP10</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-  </Data>
-  <Environment>
-    <Variable>
-      <Value>crushadmin</Value>
-      <Name>CRUSH_ADMIN_USER</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>crushadmin</Value>
-      <Name>CRUSH_ADMIN_PASSWORD</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>http</Value>
-      <Name>CRUSH_ADMIN_PROTOCOL</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
-      <Value>8080</Value>
-      <Name>CRUSH_ADMIN_PORT</Name>
-      <Mode/>
-    </Variable>
-  </Environment>
-  <Labels/>
-  <Config Name="FTP Port" Target="21" Default="2121" Mode="tcp" Description="Container Port: 2121" Type="Port" Display="always" Required="true" Mask="false">21</Config>
-  <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">443</Config>
-  <Config Name="FTP Passive Ports" Target="2000-2100" Default="2000-2100" Mode="tcp" Description="Container Port: 2000-2100" Type="Port" Display="always" Required="true" Mask="false">2000-2100</Config>
-  <Config Name="SFTP Port" Target="2222" Default="2222" Mode="tcp" Description="Container Port: 2222" Type="Port" Display="always" Required="true" Mask="false">2222</Config>
-  <Config Name="HTTP Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="HTTP Port" Target="9090" Default="9090" Mode="tcp" Description="Container Port: 9090" Type="Port" Display="always" Required="true" Mask="false">9090</Config>
-  <Config Name="CrushFTP Admin User" Target="CRUSH_ADMIN_USER" Default="crushadmin" Mode="" Description="Default admin user for CrushFTP administration" Type="Variable" Display="always" Required="true" Mask="false">crushadmin</Config>
-  <Config Name="CrushFTP Admin Password" Target="CRUSH_ADMIN_PASSWORD" Default="crushadmin" Mode="" Description="Default admin password for CrushFTP administration" Type="Variable" Display="always" Required="true" Mask="false">crushadmin</Config>
-  <Config Name="Healthcheck Protocol" Target="CRUSH_ADMIN_PROTOCOL" Default="http" Mode="" Description="Protocol for health cecks" Type="Variable" Display="always" Required="true" Mask="false">http</Config>
-  <Config Name="Healthceck Port" Target="CRUSH_ADMIN_PORT" Default="8080" Mode="" Description="Port for health cecks" Type="Variable" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="FTP Folder 1" Target="/mnt/FTP/Shared" Default="" Mode="rw" Description="Container Path: /mnt/FTP/Shared" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/</Config>
-  <Config Name="Config Volume" Target="/var/opt/CrushFTP10" Default="/mnt/cache/appdata/crushftp" Mode="rw" Description="Container Path: /var/opt/CrushFTP10" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/cache/appdata/crushftp</Config>
+  <Requires/>
+  <Config Name="HTTP port" Target="8080" Default="8080" Mode="tcp" Description="The web UI and the admin pages, over HTTP." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="HTTPS port" Target="443" Default="443" Mode="tcp" Description="The web UI and the admin pages, over HTTPS." Type="Port" Display="always" Required="false" Mask="false">443</Config>
+  <Config Name="SFTP port" Target="2222" Default="2222" Mode="tcp" Description="SFTP. Unraid's own SSH server already listens on 22." Type="Port" Display="always" Required="false" Mask="false">2222</Config>
+  <Config Name="FTP port" Target="21" Default="21" Mode="tcp" Description="FTP and explicit FTPS." Type="Port" Display="always" Required="false" Mask="false">21</Config>
+  <Config Name="FTP passive ports" Target="2000-2100" Default="2000-2100" Mode="tcp" Description="FTP's passive data connections." Type="Port" Display="always" Required="false" Mask="false">2000-2100</Config>
+  <Config Name="Second HTTP port" Target="9090" Default="9090" Mode="tcp" Description="A second HTTP port CrushFTP opens." Type="Port" Display="advanced" Required="false" Mask="false">9090</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/crushftp" Mode="rw" Description="The CrushFTP folder: the program, settings, users, jobs, keys and logs, and admin-password.txt." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/crushftp</Config>
+  <Config Name="Files" Target="/mnt/FTP/Shared" Default="" Mode="rw" Description="A share to give users, such as /mnt/user/files. Give it to users in the admin pages as /mnt/FTP/Shared." Type="Path" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="CrushFTP version" Target="CRUSHFTP_VERSION" Default="27" Mode="" Description="The version a new, empty Config folder gets: 27, 11 or 10. An installed one keeps its own." Type="Variable" Display="always" Required="false" Mask="false">27</Config>
+  <Config Name="CrushFTP upgrade" Target="CRUSHFTP_UPGRADE" Default="" Mode="" Description="11 or 27 moves an installed CrushFTP to that newer major version, which needs its own license." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Admin user" Target="CRUSH_ADMIN_USER" Default="crushadmin" Mode="" Description="The first administrator's name." Type="Variable" Display="advanced" Required="false" Mask="false">crushadmin</Config>
+  <Config Name="Admin password" Target="CRUSH_ADMIN_PASSWORD" Default="" Mode="" Description="The first administrator's password, instead of a random one. Used once; crushadmin and other well-known passwords are refused." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Java memory" Target="CRUSHFTP_MEMORY" Default="" Mode="" Description="The most memory Java may use, such as 2g. Empty: half the container's memory." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="The user CrushFTP runs as and the Config folder belongs to." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="The group CrushFTP runs as and the Config folder belongs to." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Health check protocol" Target="CRUSH_ADMIN_PROTOCOL" Default="http" Mode="" Description="http or https, for the health check." Type="Variable" Display="advanced" Required="false" Mask="false">http</Config>
+  <Config Name="Health check port" Target="CRUSH_ADMIN_PORT" Default="8080" Mode="" Description="The port the health check asks." Type="Variable" Display="advanced" Required="false" Mask="false">8080</Config>
 </Container>

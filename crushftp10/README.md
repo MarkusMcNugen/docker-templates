@@ -1,16 +1,9 @@
-[githubownerurl]: https://github.com/MarkusMcNugen
-[preview]: https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png "CrushFTP Logo"
+<img src="https://raw.githubusercontent.com/MarkusMcNugen/docker-templates/master/crushftp10/crushftp.png" alt="CrushFTP" width="96">
 
-# unRAID CrushFTP 10 Server Template
+# Unraid template: CrushFTP
 
-![alt text][preview]
+CrushFTP 10 and 11 or CrushMFT 27 in one container. The first start downloads the version chosen in the template into the Config folder, CrushMFT 27 by default, and each later start moves it to the vendor's newest build of that version. The first administrator's password is in `admin-password.txt` in the Config folder.
 
-## CrushFTP 10 server built on Alpine 3.12. Size 234.8 MB.
-
-# URLs
-Docker Maintainer:
-[MarkusMcNugen][githubownerurl]  
-
-Docker Hub: https://hub.docker.com/r/markusmcnugen/crushftp10/
-
-Github: https://github.com/MarkusMcNugen/docker-crushftp
+- Image: [markusmcnugen/crushftp](https://hub.docker.com/r/markusmcnugen/crushftp) on Docker Hub
+- Source and documentation: [MarkusMcNugen/docker-CrushFTP](https://github.com/MarkusMcNugen/docker-CrushFTP)
+- Support: [the Unraid forum thread](https://forums.unraid.net/topic/69152-support-markusmcnugens-docker-repository/)
