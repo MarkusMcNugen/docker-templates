@@ -5,7 +5,9 @@
 
 ![alt text][preview]
 
-## Headless qBittorrent docker with WebUI and OpenVPN support
+## qBittorrent behind an OpenVPN or WireGuard tunnel with a fail-closed firewall
+
+Setting the template up, the Extra Parameters it carries, and where the VPN configuration goes: [Run on Unraid](https://markusmcnugen.github.io/docker-qBittorrentvpn/docs/how-to/run-on-unraid/).
 
 # URLs
 Docker Maintainer:  
